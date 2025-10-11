@@ -138,7 +138,11 @@
      */
     # define RESET "\033[0m "
 
-
+    /**
+     * @brief Game Delay (Milliseconds)
+     * @note Default Value is 16ms for ~60FPS
+     */
+    # define GAME_DELAY 16
 
     //---------------------------//
     //--| Board Configuration |--//
@@ -147,12 +151,12 @@
      * @brief Board Width
      * @note Default Value is 64 Blocks
      */
-    # define BOARD_WIDTH 37
+    # define BOARD_WIDTH 38
     /**
      * @brief Board Height
      * @note Default Value is 52 Blocks
      */
-    # define BOARD_HEIGHT 30
+    # define BOARD_HEIGHT 37
     /**
      * @brief Board Background Color (RGB)
      */

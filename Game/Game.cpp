@@ -67,11 +67,12 @@
      */
     void Game::display() {
         //-- Disable Cursor Blinking
-        std::cout << "\033[?25l";
+        // std::cout << "\033[?25l";
         //-- Move Cursor to the Top-Left Corner of the Terminal According to Board Height and Clear Lines
-        for (int i = 0; i < board.height + 1; i++) {
-            std::cout << "\033[A\033[2K";
-        }
+        // for (int i = 0; i < board.height + 1; i++) {
+        //     // std::cout << "\033[A\033[2K";
+        // }
+        std::cout << "\033[" << (board.height+1) << "A"; // Move cursor up all at once
         //-- Determine Middle Row Range Start Position
         int middleStart = board.height / 2 - game_info.size() / 2;
         //-- Determine Middle Row Range End Position
@@ -337,24 +338,54 @@
         int manualFPS = 0;
         //-- Initialize Last FPS
         int lastFPS = 0;
+        //-- Obtain Current Time
+        auto now = std::chrono::steady_clock::now();
+        //-- Calculate Elapsed Time Since Start of the Game
+        auto elapsedGameTime = std::chrono::duration_cast<std::chrono::seconds>(
+            now - START_TIME
+        ).count();
+        //-- Calculate Time Passed Since Last Wall Generation
+        auto elapsedWallTime = std::chrono::duration_cast<std::chrono::seconds>(
+            now - LAST_WALL_GENERATION
+        ).count();
+        //-- Calculate Time Passed Since Last FPS Print
+        auto elapsedFpsTime = std::chrono::duration_cast<std::chrono::seconds>(
+            now - LAST_FPS_PRINT
+        ).count();
+        //-- Calculate Time Passed Sinse Last Poison Generation
+        auto elapsedPoisonTime = std::chrono::duration_cast<std::chrono::seconds>(
+            now - LAST_POISON_GENERATION
+        ).count();
+        //-- Calculate Elapsed Time Hours
+        int e_hours = elapsedGameTime / 3600;
+        //-- Calculate Elapsed Time Minutes
+        int e_minutes = (elapsedGameTime % 3600) / 60;
+        //-- Calculate Elapsed Time Seconds
+        int e_seconds = elapsedGameTime % 60;
+        //-- Calculate Time Left Hours
+        int hours = (GAME_TIME - elapsedGameTime) / 3600;
+        //-- Calculate Time Left Minutes
+        int minutes = ((GAME_TIME - elapsedGameTime) % 3600) / 60;
+        //-- Calculate Time Left Seconds
+        int seconds = (GAME_TIME - elapsedGameTime) % 60;
         //-- Game Loop
         while (true) {
             //-- Obtain Current Time
-            auto now = std::chrono::steady_clock::now();
+            now = std::chrono::steady_clock::now();
             //-- Calculate Elapsed Time Since Start of the Game
-            auto elapsedGameTime = std::chrono::duration_cast<std::chrono::seconds>(
+            elapsedGameTime = std::chrono::duration_cast<std::chrono::seconds>(
                 now - START_TIME
             ).count();
             //-- Calculate Time Passed Since Last Wall Generation
-            auto elapsedWallTime = std::chrono::duration_cast<std::chrono::seconds>(
+            elapsedWallTime = std::chrono::duration_cast<std::chrono::seconds>(
                 now - LAST_WALL_GENERATION
             ).count();
             //-- Calculate Time Passed Since Last FPS Print
-            auto elapsedFpsTime = std::chrono::duration_cast<std::chrono::seconds>(
+            elapsedFpsTime = std::chrono::duration_cast<std::chrono::seconds>(
                 now - LAST_FPS_PRINT
             ).count();
             //-- Calculate Time Passed Sinse Last Poison Generation
-            auto elapsedPoisonTime = std::chrono::duration_cast<std::chrono::seconds>(
+            elapsedPoisonTime = std::chrono::duration_cast<std::chrono::seconds>(
                 now - LAST_POISON_GENERATION
             ).count();
             //-- Generate Walls During Game each GENERATE_WALLS_EACH Seconds
@@ -386,19 +417,19 @@
             //-- Set Game Info : Game Info
             game_info.push_back("Game Info");
             //-- Calculate Elapsed Time Hours
-            int e_hours = elapsedGameTime / 3600;
+            e_hours = elapsedGameTime / 3600;
             //-- Calculate Elapsed Time Minutes
-            int e_minutes = (elapsedGameTime % 3600) / 60;
+            e_minutes = (elapsedGameTime % 3600) / 60;
             //-- Calculate Elapsed Time Seconds
-            int e_seconds = elapsedGameTime % 60;
+            e_seconds = elapsedGameTime % 60;
             //-- Set Game Info : Ellapsed Time Since Start of the Game
             game_info.push_back("Elapsed Time : " + std::to_string(e_hours) + "h " + std::to_string(e_minutes) + "m " + std::to_string(e_seconds) + "s");
             //-- Calculate Time Left Hours
-            int hours = (GAME_TIME - elapsedGameTime) / 3600;
+            hours = (GAME_TIME - elapsedGameTime) / 3600;
             //-- Calculate Time Left Minutes
-            int minutes = ((GAME_TIME - elapsedGameTime) % 3600) / 60;
+            minutes = ((GAME_TIME - elapsedGameTime) % 3600) / 60;
             //-- Calculate Time Left Seconds
-            int seconds = (GAME_TIME - elapsedGameTime) % 60;
+            seconds = (GAME_TIME - elapsedGameTime) % 60;
             //-- Set Game Info : Time Left
             game_info.push_back("Time Left : " + std::to_string(hours) + "h " + std::to_string(minutes) + "m " + std::to_string(seconds) + "s");
             //-- Set Game Info : Score
@@ -443,7 +474,7 @@
                 game_info.push_back(game_tips[i]);
             }
             //-- Delay
-            std::this_thread::sleep_for(std::chrono::milliseconds(106));
+            std::this_thread::sleep_for(std::chrono::milliseconds(GAME_DELAY));
             //-- Clear Terminal
             // clearTerminal();
             //-- Display Game
@@ -465,7 +496,7 @@
                 //-- Set Game Info : Time is Over
                 game_info.push_back("Time is Over");
                 //-- Clear Terminal
-                clearTerminal();
+                // clearTerminal();
                 //-- Display Game
                 display();
                 //-- Exit the Game
