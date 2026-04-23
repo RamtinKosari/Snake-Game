@@ -1,6 +1,6 @@
 # ifndef RK_GAMES_SNAKE
     /**
-     * @file main.cpp
+     * @file Game.hpp
      * @author Arash Rahmani (github.com/arashrahmani)
      * @author Ramtin Kosari (github.com/ramtinkosari)
      * @brief Snake Game Implementation in C++ Using Object-Oriented Programming - Game Header File
@@ -18,15 +18,23 @@
         # ifndef HAS_RKACPB_MODULE_RKLOGGER
             # error "RKLogger File is Required for RK_GAMES_SNAKE Module"
         # endif // HAS_RKACPB_MODULE_RKLOGGER
+        //-- Check if Blocks File is Configured
+        # ifndef HAS_RKACPB_MODULE_BLOCKS
+            # error "Blocks File is Required for RK_GAMES_SNAKE Module"
+        # endif // HAS_RKACPB_MODULE_BLOCKS
     # endif // RKACPB
     //-- Include Configuration File
-    # ifndef SGCOOP_CONFIGS
+    # ifndef RK_GAMES_SNAKE_CONFIGS
         # include "Configs.hpp"
-    # endif // SGCOOP_CONFIGS
+    # endif // RK_GAMES_SNAKE_CONFIGS
     //-- Include RKLogger
     # ifndef RKLOGGER
         # include "RKLogger.hpp"
     # endif // RKLOGGER
+    //-- Include Blocks
+    # ifndef RK_GAMES_SNAKE_BLOCKS
+        # include "Blocks.hpp"
+    # endif // RK_GAMES_SNAKE_BLOCKS
     /**
      * @namespace rkgames
      * @brief rkgames namespace
@@ -47,6 +55,10 @@
                     //-- | Attributes | --//
                     //--------------------//
                     /**
+                     * @brief Blocks Object
+                     */
+                    std::vector<std::vector<Block>> blocks, foods, poisons, speed_ups, slow_downs, portals, shields, coins;
+                    /**
                      * @brief Game Information
                      */
                     std::vector<std::string> game_info;
@@ -58,6 +70,14 @@
                      * @brief Game Score
                      */
                     long long int score;
+                    /**
+                     * @brief Block Counters
+                     */
+                    int foodCount = 0, wallCount = 0, poisonCount = 0, speedUpCount = 0, slowDownCount = 0, portalCount = 0, shieldCount = 0, coinCount = 0;
+                    /**
+                     * @brief Last Information Color
+                     */
+                    std::string lastInfoColor;
                     //--------------------//
                     //-- | Structures | --//
                     //--------------------//
@@ -125,6 +145,13 @@
                      * @brief Generate Board
                      */
                     void generate();
+                    /**
+                     * @brief Generate Blocks
+                     * @param t Block Type
+                     */
+                    void generateBlocks(
+                        BLOCK_TYPES t
+                    );
                     /**
                      * @brief Display Game
                      */
