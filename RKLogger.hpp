@@ -32,12 +32,6 @@
      */
     # define FAILURE "\033[38;2;255;0;0m[FAILURE]\033[0m "
     /**
-     * @def INFO
-     * @brief Information Message
-     * @details This Macro Defines Information Message Log Label
-     */
-    # define INFO "\033[38;2;0;255;255m[INFO]\033[0m "
-    /**
      * @def LOG
      * @brief Log Message
      * @details This Macro Defines Log Message Log Label
@@ -109,6 +103,36 @@
      * @details This Macro Defines Yellow Color for Log Messages
      */
     # define YELLOW "\033[38;2;255;255;0m"
+    /**
+     * @def INFO
+     * @brief Information Message
+     * @details This Macro Defines Information Message Log Label for Algorithms Class
+     */
+    # define INFO "\033[38;2;0;170;170m[INFO]\033[0m "
+    /**
+     * @def CYAN
+     * @brief Cyan Label Message
+     * @details This Macro Defines Cyan Message Log Label for Algorithms Class
+     */
+    # define CYAN "\033[38;2;0;255;255m"
+    /**
+     * @def LIGHT_BLUE
+     * @brief Light Blue Label Message
+     * @details This Macro Defines Light Blur Message Log Label for Algorithms Class
+     */
+    # define LIGHT_BLUE "\033[38;2;183;199;212m"
+    /**
+     * @def Astral
+     * @brief Astal Label Message
+     * @details This Macro Defines Astral Message Log Label for Algorithms Class
+     */
+    # define ASTRAL "\033[38;2;160;142;171m"
+    /**
+     * @def ORANGE
+     * @brief Orange Label Message
+     * @details This Macro Defines Orange Message Log Label for Algorithms Class
+     */
+    # define ORANGE "\033[38;2;255;165;0m"
     /**
      * @def LABEL
      * @brief Label Message
