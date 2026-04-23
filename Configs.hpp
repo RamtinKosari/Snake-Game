@@ -133,13 +133,13 @@
      * @def RK_GAME_SNAKE_CNF_FOOD_CHARACTER
      * @brief Food Character
      */
-    # define RK_GAME_SNAKE_CNF_FOOD_CHARACTER "◎ "
+    # define RK_GAME_SNAKE_CNF_FOOD_CHARACTER "🍰"
     /**
      * @def RK_GAME_SNAKE_CNF_FOOD_AMOUNT
      * @brief Default Food Amount to be Generated
      */
     # define RK_GAME_SNAKE_CNF_FOOD_AMOUNT 3
-    //◆ ☉ ◎ ● ■ ▲ ⬤ ❖ 🌀 ■
+    //◆ ☉ ◎ ● ■ ▲ ⬤ ❖ 🌀 ■ ☕ ♥ 🍩 🍫 🍔 🍰 🐇 💗 💕
     //////////////////////////////
     //--------------------------//
     //--| Wall Configuration |--//
@@ -149,7 +149,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_WALL
      * @brief Enable Wall Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_WALL false
+    # define RK_GAME_SNAKE_CNF_ENABLE_WALL true
     /**
      * @def RK_GAME_SNAKE_CNF_WALL_COLOR
      * @brief Wall Color (RGB)
@@ -165,6 +165,16 @@
      * @brief Default WALLS Amount to be Generated
      */
     # define RK_GAME_SNAKE_CNF_WALLS_AMOUNT 3
+    /**
+     * @def RK_GAME_SNAKE_CNF_WALL_LENGTH
+     * @brief Wall Length
+     */
+    # define RK_GAME_SNAKE_CNF_WALL_LENGTH 5
+    /**
+     * @def RK_GAME_SNAKE_CNF_WALL_PADDING
+     * @brief Wall Padding
+     */
+    # define RK_GAME_SNAKE_CNF_WALL_PADDING 5
     ////////////////////////////////
     //----------------------------//
     //--| Poison Configuration |--//
@@ -174,7 +184,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_POISON
      * @brief Enable Poison Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_POISON false
+    # define RK_GAME_SNAKE_CNF_ENABLE_POISON true
     /**
      * @brief Poison Color (RGB)
      */
@@ -183,12 +193,13 @@
      * @def RK_GAME_SNAKE_CNF_POISON_CHARACTER
      * @brief Poison Character
      */
-    # define RK_GAME_SNAKE_CNF_POISON_CHARACTER "☠ "
+    # define RK_GAME_SNAKE_CNF_POISON_CHARACTER "💀"
+    // 🫟 ☠ ☢️ ☢ ☣️ ⚠️ ☠️ 💀
     /**
      * @def RK_GAME_SNAKE_CNF_POISON_AMOUNT
      * @brief Default Poison Amount to be Generated
      */
-    # define RK_GAME_SNAKE_CNF_POISON_AMOUNT 3
+    # define RK_GAME_SNAKE_CNF_POISON_AMOUNT 5
     //////////////////////////////////
     //------------------------------//
     //--| Speed Up Configuration |--//
@@ -198,7 +209,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_SPEED_UP
      * @brief Enable Speed Up Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_SPEED_UP false
+    # define RK_GAME_SNAKE_CNF_ENABLE_SPEED_UP true
     /**
      * @def RK_GAME_SNAKE_CNF_SPEED_UP_COLOR
      * @brief Speed Up Color (RGB)
@@ -208,12 +219,13 @@
      * @def RK_GAME_SNAKE_CNF_SPEED_UP_CHARACTER
      * @brief Speed Up Character
      */
-    # define RK_GAME_SNAKE_CNF_SPEED_UP_CHARACTER "⊕ "
+    # define RK_GAME_SNAKE_CNF_SPEED_UP_CHARACTER "🐇"
+    // ᯓ➤ ❯❯ ⚡️ 🐇
     /**
      * @def RK_GAME_SNAKE_CNF_SPEED_UP_AMOUNT
      * @brief Default Speed Up Amount to be Generated
      */
-    # define RK_GAME_SNAKE_CNF_SPEED_UP_AMOUNT 3
+    # define RK_GAME_SNAKE_CNF_SPEED_UP_AMOUNT 2
     ///////////////////////////////////
     //-------------------------------//
     //--| Slow Down Configuration |--//
@@ -223,7 +235,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_SPEED_DOWN
      * @brief Enable Speed Down Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_SLOW_DOWN false
+    # define RK_GAME_SNAKE_CNF_ENABLE_SLOW_DOWN true
     /**
      * @def RK_GAME_SNAKE_CNF_SLOW_DOWN_COLOR
      * @brief Slow Down Color (RGB)
@@ -233,12 +245,13 @@
      * @def RK_GAME_SNAKE_CNF_SLOW_DOWN_CHARACTER
      * @brief Slow Down Character
      */
-    # define RK_GAME_SNAKE_CNF_SLOW_DOWN_CHARACTER "⊕ "
+    # define RK_GAME_SNAKE_CNF_SLOW_DOWN_CHARACTER "🐌"
+    // 🐌
     /**
      * @def RK_GAME_SNAKE_CNF_SPEED_DOWN_AMOUNT
      * @brief Default Speed Down Amount to be Generated
      */
-    # define RK_GAME_SNAKE_CNF_SPEED_DOWN_AMOUNT 3
+    # define RK_GAME_SNAKE_CNF_SLOW_DOWN_AMOUNT 2
     ////////////////////////////////
     //----------------------------//
     //--| Portal Configuration |--//
@@ -248,22 +261,23 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_PORTAL
      * @brief Enable Portal Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_PORTAL false
+    # define RK_GAME_SNAKE_CNF_ENABLE_PORTAL true
     /**
      * @def RK_GAME_SNAKE_CNF_PORTAL_COLOR
      * @brief Portal Color (RGB)
      */
-    # define RK_GAME_SNAKE_CNF_PORTAL_COLOR RKColor(255, 255, 0)
+    # define RK_GAME_SNAKE_CNF_PORTAL_COLOR RKColor(0, 255, 255)
     /**
      * @def RK_GAME_SNAKE_CNF_PORTAL_CHARACTER
      * @brief Portal Character
      */
-    # define RK_GAME_SNAKE_CNF_PORTAL_CHARACTER "⊕ "
+    # define RK_GAME_SNAKE_CNF_PORTAL_CHARACTER "🌀"
+    // 𖤛 ꩜ 𑓕 𑙩 ಄ 🌀
     /**
      * @def RK_GAME_SNAKE_CNF_PORTAL_AMOUNT
      * @brief Default Portals Amount to be Generated
      */
-    # define RK_GAME_SNAKE_CNF_PORTAL_AMOUNT 3
+    # define RK_GAME_SNAKE_CNF_PORTAL_AMOUNT 2
     ////////////////////////////////
     //----------------------------//
     //--| Shield Configuration |--//
@@ -273,7 +287,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_SHIELD
      * @brief Enable Shield Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_SHIELD false
+    # define RK_GAME_SNAKE_CNF_ENABLE_SHIELD true
     /**
      * @def RK_GAME_SNAKE_CNF_SHIELD_COLOR
      * @brief Shield Color (RGB)
@@ -283,7 +297,8 @@
      * @def RK_GAME_SNAKE_CNF_SHIELD_CHARACTER
      * @brief Shield Character
      */
-    # define RK_GAME_SNAKE_CNF_SHIELD_CHARACTER "⊕ "
+    # define RK_GAME_SNAKE_CNF_SHIELD_CHARACTER "💪"
+    // ᗢ⛊𖤍🛡🛡️💪𓂀
     /**
      * @def RK_GAME_SNAKE_CNF_SHIELD_AMOUNT
      * @brief Default Shields Amount to be Generated
@@ -298,7 +313,7 @@
      * @def RK_GAME_SNAKE_CNF_ENABLE_COIN
      * @brief Enable Coin Generation
      */
-    # define RK_GAME_SNAKE_CNF_ENABLE_COIN false
+    # define RK_GAME_SNAKE_CNF_ENABLE_COIN true
     /**
      * @def RK_GAME_SNAKE_CNF_COIN_COLOR
      * @brief Coin Color (RGB)
@@ -308,10 +323,11 @@
      * @def RK_GAME_SNAKE_CNF_COIN_CHARACTER
      * @brief Coin Character
      */
-    # define RK_GAME_SNAKE_CNF_COIN_CHARACTER "⊕ "
+    # define RK_GAME_SNAKE_CNF_COIN_CHARACTER "💲"
+    // 🪙 💰 💵 💲 ⛃
     /**
      * @def RK_GAME_SNAKE_CNF_COIN_AMOUNT
      * @brief Default Coin Amount to be Generated
      */
-    # define RK_GAME_SNAKE_CNF_COIN_AMOUNT 3
+    # define RK_GAME_SNAKE_CNF_COIN_AMOUNT 10
 # endif // RK_GAMES_SNAKE_CONFIGS

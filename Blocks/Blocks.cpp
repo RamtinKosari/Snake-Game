@@ -72,9 +72,9 @@
             //-- Set Slow Down Block Properties
             case BLOCK_TYPE_SLOW_DOWN: {
                 //-- Set Color
-                color = RK_GAME_SNAKE_CNF_SPEED_UP_COLOR;
+                color = RK_GAME_SNAKE_CNF_SLOW_DOWN_COLOR;
                 //-- Set Character
-                character = RK_GAME_SNAKE_CNF_SPEED_UP_CHARACTER;
+                character = RK_GAME_SNAKE_CNF_SLOW_DOWN_CHARACTER;
                 //-- Set Visual Representation
                 setVisual(false);
                 break;
